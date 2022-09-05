@@ -4,14 +4,20 @@
 
 using namespace std;
 
-int main(){
-    int h, m;
-    cin >> h >> m;
+void TimeSet(int h, int m, int t);
 
+int main(){
+    int h, m, t;
+    cin >> h >> m >> t;
+
+    TimeSet(h, m, t);
+}
+
+void TimeSet(int h, int m, int t){
     if(h == 0) h = 24;
 
     m += h * 60;
-    m -= 45;
+    m += t;
 
     h = 0;
     while(m >= 60){
@@ -19,7 +25,7 @@ int main(){
         h++;
     }
 
-    if(h == 24) h = 0;
+    if(h >= 24) h -= 24;
 
     cout << h << " " << m;
 }
