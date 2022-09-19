@@ -1,9 +1,11 @@
+<div align="center">
 
-## 코딩테스트
+# BAEKJOON Coding test
 
-### ➗MathProblem
+####  백준에서 제공하는 코딩테스트 문제들 입니다.<br><br><br>
 
-| 문제 | 번호 | 풀이 완료 | 체감난이도 |
-|:-----------------|:------:|:----------:|:-----:|
-|공약수| [5618](https://www.acmicpc.net/problem/5618) |    ✔    | 3 / 5|
-|피로도| [22864](https://www.acmicpc.net/problem/22864) |  ✔ | 1 / 5 |
+<dic align="left">
+
+## ⌛[MathProblem](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/Readme.md)
+---
+> 수학 관련 문제들입니다.
