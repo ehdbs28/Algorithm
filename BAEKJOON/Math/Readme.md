@@ -40,4 +40,37 @@ int maxNum;
     }
 ```
 
+<br>
+<br>
+
+### 2. 피로도<br>
+> #### [22864번 공약수](https://www.acmicpc.net/problem/22864)
+> [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/22864_fatigue.cpp)
+
+##### 24시간 동안 번아웃에 걸리지 않고 얼마나 일을 할 수 있는지 구하는 알고리즘 문제로 쉽게 풀었다.
+<br>
+
+``` cs
+while (day > 0)
+{
+    fatigue += a; //먼저 피로도를 더해주기
+    if(fatigue <= m){
+       workAmount += b;
+    }
+    else{
+        fatigue -= a; 
+        //피로도가 게속 증가하는것을 막기위해 이미 더한 값을 빼줌
+        fatigue -= c;
+
+        if(fatigue < 0) fatigue = 0;
+    }
+
+    day--;
+}
+```
+
+<br>
+
+##### 24시간 동안의 일을 구해야 함으로 24번 반복문을 돌리고 if문으로 조건을 걸어 일을 할 때와 일을 할 수 없을때를 구분하였다.
+
 
