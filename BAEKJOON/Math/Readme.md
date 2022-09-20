@@ -73,4 +73,54 @@ while (day > 0)
 
 ##### 24시간 동안의 일을 구해야 함으로 24번 반복문을 돌리고 if문으로 조건을 걸어 일을 할 때와 일을 할 수 없을때를 구분하였다.
 
+<br><br>
 
+### 3. 진수변환
+> #### [2745번 진수변환](https://www.acmicpc.net/problem/2745)
+> [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2745_ToDecimal.cpp)
+
+##### 첫번째 줄에 숫자 n과 진수를 입력하여 해당 숫자를 10진수로 변환하는 알고리즘이다. <br>
+##### for문 세개를 각각 <br>1. 문자열을 거꾸로 돌리기, <br>2. string값을 int값으로 바꾸기, <br>3. 진수 변환 시켜주기
+##### 이러한 세 단계로 나누어 풀어야겠다 까지는 쉬웠지만 값이 원하는대로 도출되지 않아 조금 어려움을 겪었다 ㅜㅡㅜ.
+
+![화면 캡처 2022-09-20 125839](https://user-images.githubusercontent.com/98889991/191164377-69049764-f5e9-4a50-9b9b-b6d318dc845c.png)
+
+##### 처음에는 이런식으로 코드를 만들었다. <br> 하지만 진수가 커지다보니 int형으로는 오버플로우가 일어나서 long long으로 자료형을 수정하였고 <br> 아스키코드로 int형으로 바꿀때 두 자리수가 되면 두 자리수 전부가 넘어가는 것이 아닌 한자리씩 넘어가 이상한 값이 나와서 <br> 아스키코드로 변환한 값을 넣는 int형 벡터를 만들어 문제를 해결하였다.
+
+<br>
+
+```cpp
+int main(){
+    string n = "";
+    int b = 0;
+    long long nToInt = 0;
+
+    vector<int> vec;
+
+    cin >> n >> b;
+
+    for(int i= 0; i < n.length() / 2; i++){ //문자열 거꾸로 쓰기
+        char temp = n[n.length() - (i + 1)];
+        n[n.length() - (i + 1)] = n[i];
+        n[i] = temp;
+    }
+
+    for(int i = 0; i < n.length(); i++){ 
+        if(n[i] >= 65 && n[i] <= 90){ //아스키코드를 이용하여 Char형을 Int형으로 바꿔줌
+            vec.push_back(n[i] - 55);
+        }
+        else vec.push_back(n[i] - 48);
+    }
+
+    for(int i = 0; i < vec.size(); i++){
+        long long _pow = 0;
+        _pow = pow(b, i);
+        nToInt += vec[i] * _pow; //진수 변환
+    }
+
+    cout << nToInt;
+}
+```
+
+##### 아스키 코드를 이용한 형 변환에 대해서 공부하였고 <br>
+##### math.h 라이브러리를 활용한 제곱계산에 대해서 배웠다.
