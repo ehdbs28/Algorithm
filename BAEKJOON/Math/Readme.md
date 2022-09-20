@@ -80,7 +80,14 @@ while (day > 0)
 > [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2745_ToDecimal.cpp)
 
 ##### 첫번째 줄에 숫자 n과 진수를 입력하여 해당 숫자를 10진수로 변환하는 알고리즘이다. <br>
-##### for문 세개를 각각 <br>1. 문자열을 거꾸로 돌리기, <br>2. string값을 int값으로 바꾸기, <br>3. 진수 변환 시켜주기
+##### for문 세개를 각각
+
+```
+1. 문자열을 거꾸로 돌리기
+2. string값 int값으로 바꾸기
+3. 진수 변환 시켜주기
+```
+
 ##### 이러한 세 단계로 나누어 풀어야겠다 까지는 쉬웠지만 값이 원하는대로 도출되지 않아 조금 어려움을 겪었다 ㅜㅡㅜ.
 
 ![화면 캡처 2022-09-20 125839](https://user-images.githubusercontent.com/98889991/191164377-69049764-f5e9-4a50-9b9b-b6d318dc845c.png)
