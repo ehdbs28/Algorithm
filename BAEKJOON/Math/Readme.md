@@ -13,7 +13,7 @@
 > [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/5618_common%20factor.cpp)
 
 ##### 단순히 자연수 n개의 공약수를 구하면 되는 간단한 문제였다.<br>
-##### 자연수 n개를 배열에 저장하여 공배수를 구하는 방식을 사용하였다.<br>
+##### 자연수 n개를 배열에 저장하여 공약수를 구하는 방식을 사용하였다.<br>
 
 ```cs
 int maxNum;
@@ -44,7 +44,7 @@ int maxNum;
 <br>
 
 ### 2. 피로도<br>
-> #### [22864번 공약수](https://www.acmicpc.net/problem/22864)
+> #### [22864번 피로도](https://www.acmicpc.net/problem/22864)
 > [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/22864_fatigue.cpp)
 
 ##### 24시간 동안 번아웃에 걸리지 않고 얼마나 일을 할 수 있는지 구하는 알고리즘 문제로 쉽게 풀었다.
@@ -160,7 +160,7 @@ int main(){
 answer = temp[1] + to_string(((temp[0] - 48) + (temp[1] - 48))).back();
 ```
 
-##### 첫 번째 자리는 입력받은 값의 맨 오른쪽 / 두번째 자리는 두 값을 더한 값의 오른쪽을 넣어야 하기 떄문에 단순히 위에 코드처럼 생각했지만
+##### 첫 번째 자리는 입력받은 값의 맨 오른쪽 / 두번째 자리는 두 값을 더한 값의 오른쪽을 넣어야 하기 때문에 단순히 위에 코드처럼 생각했지만
 
 <br>
 
