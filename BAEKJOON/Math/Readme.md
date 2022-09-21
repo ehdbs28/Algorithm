@@ -191,3 +191,45 @@ cout << cnt;
 <br>
 
 ##### 입력한 값을 한자리씩 Queue에 담고 **Pop()** 을 이용하여 맨 오른쪽 자릿 수가 맨 앞으로 올 수 있게 하였다.
+
+<br><br>
+
+### 4. 최대공약수와 최소공배수<br>
+> #### [2609번 최대공약수와 최소공배수](https://www.acmicpc.net/problem/2609)
+> [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2609_greatest%20common%20factor%26Least%20Common%20Multiple.cpp)
+##### 두 수가 입력되고 두 수의 최대공약수와 최소공배수를 구하면 되는 간단한 수학문제 였다 !
+<br>
+
+![image](https://user-images.githubusercontent.com/98889991/191399295-6e86eca8-4fae-4b26-8861-6a604002b586.png)
+##### 최대공약수와 최소공배수를 구하는 공식은 이미 알고있었기에<br> 이 공식을 코드로 구현하여 문제를 해결하였다 !
+
+<br>
+
+`메인로직`
+
+```cs
+for(int i = 2; i <= max; i++){ //max 값 까지의 소수 구하기
+    for(int j = 2; j <= i; j++){
+        if(i % j == 0){
+            if(i == j){ // i는 소수
+                if(input1 % i == 0 && input2 % i == 0){ //최대공약수, 최소공배수 계산
+                    GCF *= i;
+                    LCM *= i;
+                    input1 /= i;
+                    input2 /= i;
+                        
+                    i = 1;
+                }
+            }
+            break;
+        }
+    }
+}
+LCM *= input1 * input2;
+```
+
+##### 로직에 문제는 없었지만 소인수분해를 for문으로 표현하다 보니 동일한 소인수로 연속으로 나눠지는 상황에서 재대로 된 소인수분해가 이루어지지 않아 몇몇 테스트케이스에서 답이 틀리게 나왔다.
+
+<br>
+
+##### 소인수분해가 된 상황에서 **i를 초기화** 해주어서 해결하였다.
