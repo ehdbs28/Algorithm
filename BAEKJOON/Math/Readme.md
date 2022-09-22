@@ -285,3 +285,21 @@ int Get_GCD(int a, int b){
 ```
 
 ##### 최대공약수를 구하는 새로운 방법인 유클리드 호제법에 대해서 공부할 수 있는 좋은 문제였다 !
+
+<br><br>
+
+### 6. 소수<br>
+> #### [2581번 소수](https://www.acmicpc.net/problem/2581)
+> [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2581_PrimeNum.cpp)
+##### 간단한 이중 for문으로 구할 수 있는 소수 문제여서 쉽게 풀었다.
+
+```cpp
+for(int i = min; i <= max; i++){
+    for(int j = 2; j <= i; j++){
+        if(i % j == 0){
+            if(i == j) primeNums.push_back(i);
+            break;
+        }
+    }
+}
+```
