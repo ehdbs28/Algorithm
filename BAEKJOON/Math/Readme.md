@@ -306,7 +306,7 @@ for(int i = min; i <= max; i++){
 
 <br><br>
 
-### 7.소인수분해<br>
+### 7. 소인수분해<br>
 > #### [11653번 소인수분해](https://www.acmicpc.net/problem/11653)
 > [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/11653_Factorization.cpp)
 ##### 앞서 푼 문제들과 똑같이 먼저 소수를 구한뒤에 소수로 나눠주는 작업을 해야겠다 ! 라고 생각했지만 무수한 실패와 시간초과를 경험하고 도저히 생각이 안난다 싶어서 다른 사람의 코드를 조금 참고하여 푼 문제이다.
@@ -330,3 +330,20 @@ while(n > 1){
 소인수 분해는 그 수가 소수로 나눠지지 않을때까지 소수로 나누는것
 ```
 ##### 이었지만 나는 소수를 먼저 쭉 구하고 그 수를 나누려고 하고 있었다.. <br> 문제풀이에 대한 사고방식 능력을 더욱 길러야 겠다고 생각한 문제였다..
+
+<br><br>
+
+### 8. 소수 찾기
+> #### [1978번 소수 찾기](https://www.acmicpc.net/problem/1978)
+> [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/1978_FindPrimeNum.cpp)
+##### 주어진 숫자중 소수가 몇개인지 출력하는 문제로 쉽게 풀은 문제였다.
+
+<br>
+
+```cpp
+for(int i = 0; i < cnt; i++){
+    int n = 0;
+    cin >> n;
+    primeNum += Get_PrimeNum(n);
+}
+```
