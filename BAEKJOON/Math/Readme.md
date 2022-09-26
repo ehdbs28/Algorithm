@@ -347,3 +347,57 @@ for(int i = 0; i < cnt; i++){
     primeNum += Get_PrimeNum(n);
 }
 ```
+
+<br><br>
+
+### 9. 에라토스테네스의 체
+> #### [2960번 에라토스테네스의 체](https://www.acmicpc.net/problem/2960)
+> [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2960_Sieve%20of%20Eratosthenes.cpp)
+##### 처음 문제를 봤을 때 먼가 이름부터 심상치 않아보이고 굉장한 고난이 예상되었지만.<br>예상보다 많이 쉽게 풀었다?
+
+<br>
+
+##### 에레스토테네스를 잘 표현한 GIF를 가져와봤다.
+![117607794-b46aac80-b197-11eb-9106-7b5567fdb357](https://user-images.githubusercontent.com/98889991/192254843-2c8aa21b-f80e-4022-8968-af4131c62c12.gif)
+##### 에라토스 테네스의 체는 소수를 구하는 알고리즘중 하나인데
+##### 시간복잡도가 O(n log(logn))으로 굉장히 빠른 듯 하다.
+
+<br>
+
+```cpp
+while(!nums.empty()){
+    int temp = nums.front();
+
+    for(int i = 0; i < nums.size(); i++){
+        if(nums[i] % temp == 0){
+            if(--k == 0){
+                    cout << nums[i];
+                    return 0;
+                }
+
+                nums.erase(nums.begin() + i);
+            }
+        }
+    }
+```
+
+##### 알고리즘 설명에 나온대로 풀어서 쉽게 풀 수 있었다 !
+##### ~~실력이 조금은 늘었을지도..?~~
+
+<br><br>
+
+### 9. LCM
+> #### [5347번 LCM](https://www.acmicpc.net/problem/5347)
+> [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/5347_LCM.cpp)
+##### 저번에 풀었던 최소공배수문제에서 테스트케이스의 맥스값만 인지하고 있으면 쉬운문제라 어려움은 없었다.
+
+```cpp
+for(int i = 0; i < cnt; i++){
+    long long a, b = 0;
+    cin >> a >> b;
+
+    if(a < b) swap(a, b);
+
+    cout << a * b / Get_LCM(a, b) << "\n";
+}
+```
