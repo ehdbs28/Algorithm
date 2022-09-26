@@ -237,7 +237,7 @@ LCM *= input1 * input2;
 <br><br>
 
 ### 5.최소공배수<br>
-> #### [1934번 최소공배수](https://www.acmicpc.net/problem/2609)
+> #### [1934번 최소공배수](https://www.acmicpc.net/problem/1934)
 > [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/1934_LCM.cpp)
 ##### 위 문제와 동일하게 최소공배수만 출력하면 된다고 생각하여 <br> 위 문제를 응용 ~~(복붙)~~ 하려고 했었지만 시간초과가 떠버렸다... 위 문제는 소수를 먼저 구하고 그 소수와 소인수분해까지 시켜주는 과정을 한번에 돌리기 떄문에 당연히 시간초과라고 생각하여... 다시 풀어보았다.
 
