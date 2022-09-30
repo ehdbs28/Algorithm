@@ -401,3 +401,5 @@ for(int i = 0; i < cnt; i++){
     cout << a * b / Get_LCM(a, b) << "\n";
 }
 ```
+                                     
+<br><br>                                     
