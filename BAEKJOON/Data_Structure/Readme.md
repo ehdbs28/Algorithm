@@ -10,7 +10,7 @@
 
 ### 1. 스택<br>
 > #### [10828 스택](https://www.acmicpc.net/problem/10828)
-> [문제풀이]()
+> [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/10828_Stack.cpp)
 
 ##### C++에서 스트링으로 switch문을 사용하지 못한다는 것을 알았다.<br><br>
 
