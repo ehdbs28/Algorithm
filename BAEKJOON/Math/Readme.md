@@ -3,7 +3,7 @@
 # MathProblem
 #### 수학 관련 문제들입니다. <br><br>
 
-### ⌛[**진행중**]⌛
+### ✅[**남은건 못 푸는 문제 ㅜㅡㅜ**]✅
 <br>
 
 <div align='left'>
@@ -386,7 +386,7 @@ while(!nums.empty()){
 
 <br><br>
 
-### 9. LCM
+### 10. LCM
 > #### [5347번 LCM](https://www.acmicpc.net/problem/5347)
 > [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/5347_LCM.cpp)
 ##### 저번에 풀었던 최소공배수문제에서 테스트케이스의 맥스값만 인지하고 있으면 쉬운문제라 어려움은 없었다.
