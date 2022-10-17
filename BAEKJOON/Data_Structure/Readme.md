@@ -73,3 +73,27 @@ for(int i = 0; i < lenght; i++){
 ##### 문자열에서 **"()"** 인 부분을 판단하여 지우고
 ##### for문이 끝난 후 문자열이 비어있으면 VPS 으로 판단하였다.
 
+<br><br>
+
+### 3. 큐2
+> #### [18258 큐2](https://www.acmicpc.net/problem/18258)
+> [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/18258_queue2.cpp)
+
+<br>
+
+##### 이 문제는 첫 번째 문제와 비슷한 방법으로 풀면 되지만
+##### 괜히 ***에잉 스택으로 풀면 이미 있는 기능 쓰는거잖아;; 배열로 풀어***
+##### 라는 말을 해버려서... 꽤나 생각하는데에 힘들었다.
+
+![image](https://user-images.githubusercontent.com/98889991/196065073-8d76f101-4564-4686-bd61-eb677f3e77aa.png)
+###### 꽤나 화려한 전적...
+
+<br>
+
+##### 중간중간 시간초과가 뜨는 이슈가 있었는데
+```cs
+ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
+```
+##### C와의 sync를 해제하고 cout과 cin를 untie하여 해결하였다.
+
+
