@@ -9,7 +9,7 @@
 <dir>
 <br>
 
-# ⌛[DataStructure1](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/Readme.md)-
+# ⌛[DataStructure1](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/Readme.md)
 자료구조 문제들입니다.
 
 <br>
