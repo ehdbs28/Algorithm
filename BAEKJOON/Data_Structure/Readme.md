@@ -112,6 +112,35 @@ K번째 숫자가 무엇인지 계산.
     
 배열을 넘어가면 처음으로 돌아가기.
 ```
+##### 위에 계산을 모두하다보니 당연히 **시간초과** 문제로 고생하였다.<br>계산을 줄이기 위해 **원형 큐**를 만들어서 문제를 해결하였다.
     
-##### 위에 계산을 모두하다보니 당연히 시간초과 문제로 고생하였다.<br>계산을 줄이기 위해 원형 큐를 만들어서 문제를 해결하였다.
+```cpp
+for(int i = 1; !_queue.empty(); i++){
+    if(i % k == 0){
+        if(_queue.size() == 1){
+            cout << _queue.front();
+        }
+        else{
+            cout << _queue.front() << ", ";
+        }
+
+        _queue.pop();
+    }
+    else{
+        int temp = _queue.front();
+        _queue.pop();
+        _queue.push(temp);
+    }
+}
+```
    
+<br><br>
+
+### 5. 카드2
+    
+> #### [2164 카드2](https://www.acmicpc.net/problem/2164)
+> #### [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/2164_Card2.cpp)
+    
+##### 앞에 문제를 응용하여 이 문제 또한 원형큐를 만들어서 해결하였다.
+    
+##### 앞에 문제와 로직이 굉장히 비슷한 응용격인 문제라서 굉장히 쉽게 풀 수 있었다.
