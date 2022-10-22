@@ -96,4 +96,22 @@ ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
 ```
 ##### C와의 sync를 해제하고 cout과 cin를 untie하여 해결하였다.
 
-
+<br><br>
+    
+### 4. 요세푸스 문제
+> #### [1158 요세푸스 문제](https://www.acmicpc.net/problem/1158)
+> #### [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/1158_%20Josephus%20Problem.cpp)
+    
+##### 이 문제는 N까지의 숫자를 순서대로 K번째 순으로 제거하여<br>제거 된 순서를 출력하는 문제이다.
+    
+##### 처음에는 배열을 사용하여 풀려고 하였으나.
+```
+숫자가 모두 제거되었는지 계산.
+    
+K번째 숫자가 무엇인지 계산.
+    
+배열을 넘어가면 처음으로 돌아가기.
+```
+    
+##### 위에 계산을 모두하다보니 당연히 시간초과 문제로 고생하였다.<br>계산을 줄이기 위해 원형 큐를 만들어서 문제를 해결하였다.
+   
