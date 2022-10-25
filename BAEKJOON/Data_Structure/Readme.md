@@ -144,3 +144,25 @@ for(int i = 1; !_queue.empty(); i++){
 ##### 앞에 문제를 응용하여 이 문제 또한 원형큐를 만들어서 해결하였다.
     
 ##### 앞에 문제와 로직이 굉장히 비슷한 응용격인 문제라서 굉장히 쉽게 풀 수 있었다.
+
+<br><br>
+
+### 6. 덱
+> #### [10866 덱](https://www.acmicpc.net/problem/10866)
+> #### [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/10866_Deque.cpp)
+
+##### Deque를 구현하는 문제였다. 한번도 이용해본적없는 자료구조여서 생각하기 힘들었다..
+##### 다른 부분은 해결하기 쉬웠지만 ***push_front*** 일 때 배열 앞에 값을 추가시켜주어야 하는데 어떻게 풀어야 할 지 감이 안잡혀서 조금 애먹었다.
+
+```cpp
+if(order == "push_front"){
+    int n;
+    cin >> n;
+    for(int i = back; i >= 0; i--){
+        deque[i + 1] = deque[i];
+    }
+    back++;
+    deque[front + 1] = n;
+}
+```
+##### for문을 이용하여 배열을 한칸씩 뒤로 밀어주는 방식을 이용해 해결하였다.
