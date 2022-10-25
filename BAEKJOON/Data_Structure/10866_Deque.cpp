@@ -6,18 +6,21 @@ int main(){
     int count;
     cin >> count;
 
-    int* deque = new int[1000];
-    int front = 0, back = 0;
+    int* deque = new int[10000];
+    int front = -1, back = -1;
 
     for(int i = 0; i < count; i++){
         string order;
         cin >> order;
 
         if(order == "push_front"){
-            back++;
             int n;
             cin >> n;
-            deque[front] = n;
+            for(int i = back; i >= 0; i--){
+                deque[i + 1] = deque[i];
+            }
+            back++;
+            deque[front + 1] = n;
         }
         else if(order == "push_back"){
             back++;
@@ -35,7 +38,7 @@ int main(){
         else if(order == "pop_front" || order == "front"){
             if(back - front == 0) cout << -1 << "\n";
             else{
-                cout << deque[front] << "\n";
+                cout << deque[front + 1] << "\n";
                 if(order == "pop_front") front++;
             }
         }
