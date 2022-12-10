@@ -16,3 +16,8 @@
 
 # ✅[MathProblem](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/Readme.md)
 수학 관련 문제들입니다.
+
+<br>
+
+# ⌛[Simulation]()
+시뮬레이션 문제들입니다.
