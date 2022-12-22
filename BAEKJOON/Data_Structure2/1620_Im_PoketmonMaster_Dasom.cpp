@@ -10,39 +10,28 @@ int main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
     int n, m;
-    map<int, string> PokeDex;
-
     cin >> n >> m;
+
+    map<string, int> pokemonMap;
+    string name[100000];
 
     for(int i = 0; i < n; i++){ //insert PokeDex
         string poketmonName = "";
         cin >> poketmonName;
 
-        PokeDex.insert({i, poketmonName});
+        pokemonMap.insert({poketmonName, i});
+        name[i] = poketmonName;
     }
 
     for(int i = 0; i < m; i++){ //insert Problem
         string problemInput;
 
         cin >> problemInput;
-        if(IsOnlyAlphabet(problemInput)){
-            for(auto const& pokemon : PokeDex){
-                if(pokemon.second.compare(problemInput) == 0){
-                    cout << pokemon.first << "\n";
-                }
-            }
+        if(isdigit(problemInput[0])){ //is number
+            cout << name[stoi(problemInput) - 1] << "\n";
         }
         else{
-            cout << PokeDex.at(stoi(problemInput) - 1) << "\n";
+            cout << pokemonMap.at(problemInput) + 1 << "\n";
         }
     }
-}
-
-bool IsOnlyAlphabet(string value){
-    for(char ch : value){
-        if(!isalpha(ch))
-            return false;
-    }
-
-    return true;
 }
