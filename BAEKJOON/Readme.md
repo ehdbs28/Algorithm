@@ -14,6 +14,11 @@
 
 <br>
 
+# ⌛[DataStructure2](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure2/Readme.md)
+자료구조2 문제들입니다.
+
+<br>
+
 # ✅[MathProblem](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/Readme.md)
 수학 관련 문제들입니다.
 
