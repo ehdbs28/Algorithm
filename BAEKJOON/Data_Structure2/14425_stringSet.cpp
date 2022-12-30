@@ -12,6 +12,10 @@ int main(){
 
     string* stringSet = new string[stringSetLenght];
 
+    for(int i = 0; i < stringSetLenght; i++){
+        cin >> stringSet[i];
+    }
+
     for(int i = 0; i < answerLenght; i++){
         string input;
         cin >> input;
