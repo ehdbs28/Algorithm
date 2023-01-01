@@ -1,41 +1,31 @@
 #include<iostream>
 #include<vector>
+#include<string>
 
 using namespace std;
-
-enum Element{
-    bread = 1,
-    vegetable = 2,
-    pattie = 3
-};
-vector<Element> Recipe = {bread, vegetable, pattie, bread};
 
 int solution(vector<int> ingredient);
 
 int main(){
-    vector<int> orderList = {1, 2, 3, 1};
+    vector<int> orderList = {2, 1, 1, 2, 3, 1, 2, 3, 1};
 
     cout << solution(orderList);
 }
 
 int solution(vector<int> ingredient){
     int answer = 0;
-    vector<Element> recipe = Recipe;
+    string recipe = "";
 
-    int* first = &ingredient[0];
-    for(size_t i = 0; i < ingredient.size(); ++i){
-        if(*(first + i) != recipe[0]) recipe = Recipe;
+    for(int element : ingredient){
+        recipe.push_back(element);
 
-        if(*(first + i) == recipe[0]) 
-            recipe.erase(recipe.begin());
+        if(recipe.size() < 4) continue;
 
-        if(recipe.size() == 0){
-            ingredient.erase(ingredient.begin() + (i - 3), ingredient.begin() + i + 1);
+        if(recipe[recipe.size() - 4] == 1 && recipe[recipe.size() - 3] == 2 && recipe[recipe.size() - 2] == 3 && recipe[recipe.size() - 1] == 1){
+            recipe = recipe.substr(0, recipe.size() - 4);
             answer++;
-            recipe = Recipe;
-            break;
         }
     }        
 
-    return (answer == 0) ? 0 : answer + solution(ingredient);
+    return answer;
 }
