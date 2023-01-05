@@ -112,3 +112,47 @@ for(int element : ingredient){
 } 
 ```
 생각한 방법대로 로직을 짜서 시간문제를 해결하였다.
+
+<br>
+
+### 3. 성격 유형 검사하기<br>
+> #### [문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/118666)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/PROGRAMMERS/Level_1/LV1_Checking%20personality%20type.cpp)
+
+이 문제는 MBTI검사처럼 검사지의 n개의 질문을 받고 각각의 질문에 대한 답을 통해 성격유형이 무엇인지 판단하는 문제이다.
+
+```cpp
+for(int i = 0; i < surveys.size(); i++){
+    string survey = surveys[i];
+    int choice = choices[i];
+    int value = 0;
+    int type = 0;
+    
+    string sortSurvey = survey;
+    sort(sortSurvey.begin(), sortSurvey.end());
+
+    value = choice - 4;
+
+    switch(sortSurvey.front()){
+        case 'R':
+            type = 0;
+            break;
+        case 'C':
+            type = 1;
+            break;
+        case 'J':
+            type = 2;
+            break;
+        case 'A':
+            type = 3;
+            break;
+    }
+
+    if(sortSurvey.front() != survey.front()) value *= -1;
+    types[type] += value;
+}
+```
+
+이러한 로직을 사용하여 문제를 해결하였는데 이 로직은 **우선 문제를 정렬한 후 앞 문제를 비교하여 어떠한 유형을 검사하는 문제인지 부터 파악하였다**.
+<br>
+문제에 대한 **응답에서 4를 빼서 계산할 경우 -3 ~ 3 까지 점수를 얻을 수 있다**는 것을 알아내어 이러한 방법으로 점수를 계산해 성격유형을 계산하였다.
