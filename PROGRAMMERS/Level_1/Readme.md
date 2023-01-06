@@ -156,3 +156,30 @@ for(int i = 0; i < surveys.size(); i++){
 이러한 로직을 사용하여 문제를 해결하였는데 이 로직은 **우선 문제를 정렬한 후 앞 문제를 비교하여 어떠한 유형을 검사하는 문제인지 부터 파악하였다**.
 <br>
 문제에 대한 **응답에서 4를 빼서 계산할 경우 -3 ~ 3 까지 점수를 얻을 수 있다**는 것을 알아내어 이러한 방법으로 점수를 계산해 성격유형을 계산하였다.
+
+<br>
+
+### 4. 없는 숫자 더하기
+> #### [문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/86051)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/PROGRAMMERS/Level_1/LV1_Add%20a%20missing%20number.cpp)
+
+이 문제는 주어진 문자열에서 빠진 숫자를 찾아내어 그 숫자를 더한 값을 출력만 해주면 되는 간단한 문제였다.
+
+```cpp
+int answer = 0;
+
+sort(numbers.begin(), numbers.end());
+
+for(int i = 0; i < 10; i++){
+    if(numbers.front() == i)
+        numbers.erase(numbers.begin());
+    else{
+        answer += i;
+        continue;
+    }
+}
+
+return answer;
+```
+
+주어진 문자열을 정렬한 다음 for문을 돌며 없는 문자를 찾아내었다.
