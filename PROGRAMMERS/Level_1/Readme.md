@@ -183,3 +183,13 @@ return answer;
 ```
 
 주어진 문자열을 정렬한 다음 for문을 돌며 없는 문자를 찾아내었다.
+
+<br>
+
+### 4. 나머지가 1이 되는 수 찾기
+> #### [문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/87389)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/PROGRAMMERS/Level_1/LV1_Find%20a%20number%20that%20leaves%201.cpp)
+
+문제를 보자마자 `이렇게 쉬운 문제를 풀고 올려도 되나..?` `문제 잘못 골랐나 ..?` 라는 생각이 드는 문제였지만 일단 풀기로 하였다. <br>
+
+이 문제는 말 그대로 숫자 n이 주어지고 나머지가 1이 되는 최소 수를 찾는 문제였는데 기초적인 for문과 if문을 이용하여 해결하였다.
