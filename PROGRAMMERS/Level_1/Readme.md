@@ -186,7 +186,7 @@ return answer;
 
 <br>
 
-### 4. 나머지가 1이 되는 수 찾기
+### 5. 나머지가 1이 되는 수 찾기
 > #### [문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/87389)
 > #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/PROGRAMMERS/Level_1/LV1_Find%20a%20number%20that%20leaves%201.cpp)
 
