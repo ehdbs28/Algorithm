@@ -237,3 +237,11 @@ for(int i = 1; i * i <= n; i++){
 ```
 
 이런식으로 로직을 교체하게 되면 시간복잡도 또한 `O(√n)`으로 방법 1보다 빨라지게 된다.
+
+<br>
+
+### 7. 부족한 금액 계산하기
+> #### [문제링크](https://school.programmers.co.kr/learn/courses/30/lessons/82612)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/PROGRAMMERS/Level_1/LV1_Calc%20the%20money.cpp)
+
+간단한 수학 계산문제로 손쉽게 풀 수 있었다.
