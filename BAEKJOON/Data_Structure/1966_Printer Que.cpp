@@ -1,49 +1,59 @@
 #include<iostream>
-#include<queue>
+#include<vector>
+#include<algorithm>
 
 using namespace std;
 
-bool CheckImportance(queue<int> queue){
-    int checkNum = queue.front();
-    queue.pop();
+int Printer(int arraySize, int index, vector<int> printerQueue){
+    vector<int> v = printerQueue;
+    sort(v.begin(), v.end());
 
-    for(int i = 0; i < queue.size(); i++){
-        int n = queue.front();
-        queue.pop();
+    while(!printerQueue.empty())
+    {
+        if(printerQueue.front() == v.back()){ // 이게 제일 큰수
+            if(index == 0)
+                return (arraySize - printerQueue.size()) + 1;
 
-        if(n > checkNum) return false;
+            printerQueue.erase(printerQueue.begin());
+            v.erase(v.begin() + v.size() - 1);
+        }
+        else{
+            printerQueue.push_back(printerQueue.front());
+            printerQueue.erase(printerQueue.begin());
+
+            if(index == 0)
+                index = printerQueue.size();
+            
+        }
+
+        index--;
     }
-    return true;
+    
+
+    return arraySize;
 }
 
 int main(){
-    int testCase;
-    cin >> testCase;
+    int testcase;
+    int result[100];
 
-    for(int i = 0; i < testCase; i++){
-        int lenght, index, indexNum, count;
-        cin >> lenght >> index;
-        queue<int> printQue;
-        for(int j = 0; j < lenght; j++){
-            int n;
-            cin >> n;
-            if(j == index) indexNum = n;
-            printQue.push(n);
+    cin >> testcase;
+
+    for(int i = 0; i < testcase; i++){
+        int arraySize, index;
+        vector<int> printerQueue;
+
+        cin >> arraySize >> index;
+
+        for(int j = 0; j < arraySize; j++){
+            int input = 0;
+            cin >> input;
+            printerQueue.push_back(input);
         }
 
-        while(!printQue.empty()){
-            if(CheckImportance(printQue)){
-                count++;
-                if(printQue.front() == indexNum){
-                    cout << count << "\n";
-                    break;
-                }
-                printQue.pop();
-            }
-            else{
-                printQue.push(printQue.front());
-                printQue.pop();
-            }
-        }
+        result[i] = Printer(arraySize, index, printerQueue);
     }
+
+    for(int i = 0; i < testcase; i++)
+        cout << result[i] << "\n";
 }
