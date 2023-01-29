@@ -4,20 +4,21 @@
 using namespace std;
 
 int main(){
-    int balloonCount;
-    vector<int> balloons;
+    int ballonCount;
+    int index = 0;
+    int result[1000];
 
-    cin >> balloonCount;
+    vector<int> ballonNums;
 
-    for(int i = 0; i < balloonCount; i++)
-        balloons.push_back(i + 1);
+    cin >> ballonCount;
 
-    for(int i = 0; i < balloonCount; i++){
-        int deleteIndex = 0;
-        cin >> deleteIndex;
+    for(int i = 0; i < ballonCount; i++){
+        int input;
+        cin >> input;
+        ballonNums.push_back(input);
+    }
 
-        for(int j = 0; j < deleteIndex; j++){
-            
-        }
+    for(int i = 0; i < ballonCount; i++){
+        
     }
 }

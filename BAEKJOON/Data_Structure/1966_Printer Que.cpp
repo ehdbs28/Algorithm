@@ -28,7 +28,6 @@ int Printer(int arraySize, int index, vector<int> printerQueue){
 
         index--;
     }
-    
 
     return arraySize;
 }

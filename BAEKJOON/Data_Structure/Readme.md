@@ -191,3 +191,41 @@ ex)
 ##### stack을 사용하여 하나하나 계산해주며 쉽게 해결하였다.
 
 ##### 문제를 해결하면서 문자가 알파벳인지 판단해주는 `isalpha()`라는 함수가 있다는 것을 처음알았다.<br>또한 소수점을 조절하는 방법인 `fixed`와`precision`또한 새로 알게 되었다.
+
+<br><br>
+
+### 8. 프린터 큐
+> #### [1966 프린터 큐](https://www.acmicpc.net/problem/1966)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/1966_Printer%20Que.cpp)
+
+이 문제는 일반적인 프린터 처럼 순차적으로 출력하는 것이 아닌 특정 규칙에 따라 출력하는 프린터를 만드는 문제이다.
+
+```
+1. 현재 Queue의 가장 앞에 있는 문서의 ‘중요도’를 확인한다.
+2. 나머지 문서들 중 현재 문서보다 중요도가 높은 문서가 하나라도 있다면, 이 문서를 인쇄하지 않고 Queue의 가장 뒤에 재배치 한다. 그렇지 않다면 바로 인쇄를 한다.
+```
+
+중요도를 체크하기 위하여 **큐의 내용물을 정렬시킨 리스트** 만들고 **현재 큐의 맨 첫번째 값과 정렬된 리스트의 마지막 값을 비교**하는 식으로 로직을 만들었다.
+
+```cpp
+while(!printerQueue.empty())
+{
+    if(printerQueue.front() == v.back()){ // 이게 제일 큰수
+        if(index == 0)
+            return (arraySize - printerQueue.size()) + 1;
+
+        printerQueue.erase(printerQueue.begin());
+        v.erase(v.begin() + v.size() - 1);
+    }
+    else{
+        printerQueue.push_back(printerQueue.front());
+        printerQueue.erase(printerQueue.begin());
+
+        if(index == 0)
+            index = printerQueue.size();
+        
+    }
+
+    index--;
+}
+```
