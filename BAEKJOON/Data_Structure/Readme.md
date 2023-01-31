@@ -229,3 +229,52 @@ while(!printerQueue.empty())
     index--;
 }
 ```
+
+<br><br>
+
+### 9. 풍선 터뜨리기
+> #### [2346 풍선 터뜨리기](https://www.acmicpc.net/problem/2346)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/2346_Popping%20Balloon.cpp)
+
+이 문제는 1부터 n까지의 풍선을 규칙에 맞게 터뜨리고 터뜨린 순서를 출력하는 문제이다.<br>규칙은 다음과 같다.
+
+```
+1. 제일 처음에는 1번 풍선을 터뜨린다.
+2. 풍선 안에 있는 종이를 꺼내어 종이에 적혀있는 값만큼 이동하여 다음 풍선을 터뜨린다.
+3. 종이의 숫자가 양수일 경우 오른쪽으로 음수일 경우 왼쪽으로 이동한다.
+4. 이미 터진 풍선은 지나쳐서 이동한다.
+```
+
+예를 들어 다섯 개의 풍선에 차례대로 `3, 2, 1, -3, -1`이 적혀 있다면 **3이 적힌 1번 풍선**, 이동 후 **-3이 적혀 있는 4번 풍선** 이동 후 **-1이 적혀 있는 5번 풍선** ・・・
+
+이러한 과정을 반복하여 `1, 4, 5, 3, 2` 순서로 풍선이 터지게 된다.
+
+풍선의 이동은 `FindAIndex` 라는 함수를 만들어서 구현하였다.
+
+```cpp
+int FindAIndex(int max, int currentIndex, int value){
+    int checkValue = 0;
+    for(int i = ((value > 0) ? 1 : -1); ((value > 0) ? i <= value : i >= value); ((value > 0) ? i++ : i--)){
+        checkValue = currentIndex + i;
+
+        while(checkValue > max || checkValue <= 0){
+            if(checkValue > max)
+                checkValue -= max;
+            else if(checkValue <= 0)
+                checkValue = max - abs(checkValue);
+        }
+
+        if(check[checkValue - 1]){
+            currentIndex += (value > 0) ? 1 : -1;
+            (value > 0) ? --i : ++i;
+        }
+    }
+
+    check[checkValue - 1] = true;
+    return checkValue;
+}
+```
+
+우선 현재 인덱스에서 목표 인덱스까지 한칸 씩 이동하며 그 칸으로 이동이 가능한지 확인하였다.
+
+만약 이동한 칸이 이미 터진 풍선이라면 현재 인덱스를 한칸 옮겨주고 for문을 한번 더 돌리는 방식으로 구현하였다.
