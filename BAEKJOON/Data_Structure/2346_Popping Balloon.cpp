@@ -29,7 +29,7 @@ int FindAIndex(int max, int currentIndex, int value){
 }
 
 int main(){
-    //ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
+    ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
 
     int ballonCount;
     int index = 1;
