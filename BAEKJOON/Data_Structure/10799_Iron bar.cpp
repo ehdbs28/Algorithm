@@ -16,13 +16,13 @@ int main(){
             bar_count++;
         }
         else{
-            --bar_count;
+            bar_count--;
 
-            if(input[i - 1] == '(' && input[i] == ')'){
+            if(input[i - 1] == '('){
                 answer += bar_count;
             }
             else{
-                ++answer;
+                answer++;
             }
         }
     }
