@@ -278,3 +278,37 @@ int FindAIndex(int max, int currentIndex, int value){
 우선 현재 인덱스에서 목표 인덱스까지 한칸 씩 이동하며 그 칸으로 이동이 가능한지 확인하였다.
 
 만약 이동한 칸이 이미 터진 풍선이라면 현재 인덱스를 한칸 옮겨주고 for문을 한번 더 돌리는 방식으로 구현하였다.
+
+<br><br>
+
+### 10. 쇠막대기
+
+> #### [10799 쇠막대기](https://www.acmicpc.net/problem/10799)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/10799_Iron%20bar.cpp)
+
+이 문제는 온전히 내 힘으로 풀지 못하여서 알고리즘 능력을 더욱 길러야겠다는 생각을 들게 해준 문제이다.
+
+괄호를 이용하는 문제라 `이 문제는 Stack을 이용하여 풀어야겠다!` 라고 생각하였지만 꽤나 고생하게되었다.
+스택의 pop과 push를 활용해서 어느정도 맞는 로직 정도는 짤 수 있었지만 90%만 맞을 뿐 자꾸 어디선가 버그가 있어서 100%는 맞지 못하였다.
+
+그렇게 고민을 하던 중 스택을 사용하는것이 아닌 변수 2개만을 사용하여 문제를 해결하였다는 글을 보게되었고 **스택 사용** 이라는 관점에서 벗어나 생각해보니 답을 찾아낼 수 있었다.
+
+스택을 사용하지 않은 아래의 로직을 사용하여 문제를 해결하였다.
+
+```cpp
+for(int i = 0; i < input.length(); i++){
+    if(input[i] == '('){
+        bar_count++;
+    }
+    else{
+        bar_count--;
+
+        if(input[i - 1] == '('){
+            answer += bar_count;
+        }
+        else{
+            answer++;
+        }
+    }
+}
+```
