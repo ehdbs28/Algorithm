@@ -1,5 +1,6 @@
 #include<iostream>
 #include<string>
+#include<map>
 
 using namespace std;
 
@@ -12,20 +13,20 @@ int main(){
 
     cin >> stringSetLenght >> answerLenght;
 
-    string* stringSet = new string[stringSetLenght];
+    map<string, int> stringSet;
 
     for(int i = 0; i < stringSetLenght; i++){
-        cin >> stringSet[i];
+        string input;
+        cin >> input;
+        stringSet.insert({input, i});
     }
 
     for(int i = 0; i < answerLenght; i++){
         string input;
         cin >> input;
 
-        for(int j = 0; j < stringSetLenght; j++){   
-            if(stringSet[j] == input)
-                answer++;
-        }
+        if(stringSet.find(input) != stringSet.end())
+            ++answer;
     } 
 
     cout << answer;
