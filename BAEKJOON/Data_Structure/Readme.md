@@ -1,7 +1,7 @@
 <div align='center'>
 
 # Data Structure
-#### 자료구조 문제들입니다. <br><br>
+#### Queue, Stack, Deck의 자료구조를 이용해서 해결하는 문제들이 있습니다. <br><br>
 
 ### ⌛[**진행중**]⌛
 <br>
