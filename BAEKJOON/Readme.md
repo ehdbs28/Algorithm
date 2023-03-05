@@ -10,12 +10,12 @@
 <br>
 
 # ⌛[DataStructure1](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure/Readme.md)
-자료구조 문제들입니다.
+Queue, Stack, Deck의 자료구조를 이용해서 해결하는 문제들이 있습니다.
 
 <br>
 
 # ⌛[DataStructure2](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure2/Readme.md)
-자료구조2 문제들입니다.
+Map, Set, Priority Queu의 자료구조를 이용해서 해결하는 문제들이 있습니다.
 
 <br>
 
