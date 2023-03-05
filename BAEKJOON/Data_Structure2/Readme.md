@@ -12,7 +12,7 @@
 > #### [1620 나는 포켓몬마스터 이다솜](https://www.acmicpc.net/problem/1620)
 > #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure2/1620_Im_PoketmonMaster_Dasom.cpp)
 
-##### 처음에는 문자열 전체를 인수로 받아서<br>문자열이 알파벳으로 이루어져 있는지 아닌지를 판단하는 함수를 직접 만들어 구현하는 방법을 사용하였다.
+처음에는 문자열 전체를 인수로 받아서<br>문자열이 알파벳으로 이루어져 있는지 아닌지를 판단하는 함수를 직접 만들어 구현하는 방법을 사용하였다.
 
 ```cpp
 bool IsOnlyAlphabet(string value){
@@ -25,9 +25,9 @@ bool IsOnlyAlphabet(string value){
 }
 ```
 
-##### 하지만 이러한 방식을 사용하다 보니 범위기반 for문을 많이 사용하게 되어 시간초과 이슈가 자주 발생하였다.
+하지만 이러한 방식을 사용하다 보니 범위기반 for문을 많이 사용하게 되어 시간초과 이슈가 자주 발생하였다.
 
-##### 생각해보니 문자열 전체를 굳이 판단하지 않고 문자열에 앞자리가 **숫자인지 알파벳인지** 정도만 파악해도 굳이 상관없는 문제였다.<br>문자가 숫자인지 판단해주는 `isdight`함수를 사용하여 로직을 이에 맞게 변경하였다.
+생각해보니 문자열 전체를 굳이 판단하지 않고 문자열에 앞자리가 **숫자인지 알파벳인지** 정도만 파악해도 굳이 상관없는 문제였다.<br>문자가 숫자인지 판단해주는 `isdight`함수를 사용하여 로직을 이에 맞게 변경하였다.
 
 ```cpp
 if(isdigit(problemInput[0])){ //is number
@@ -78,3 +78,55 @@ for(int i = 0; i < answerLenght; i++){
 } 
 ```
 로직을 수정하여 문제를 해결하였다.
+
+<br><br>
+
+### 3. 최대 힙
+> #### [11279 최대 힙](https://www.acmicpc.net/problem/11279)
+> #### [문제풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure2/11279_Max%20Heap.cpp)
+
+이 문제는 최대 힙을 이용하여 배열에서 가장 큰 수를 출력하는 문제이다.
+
+완전이진트리 구조로 큰수가 무조건 위로 올라오게 되는 `priority queue`를 사용하여 문제를 해결하였다.
+
+```cpp
+if(input == 0){
+    if(!heap.empty()){
+        answer = heap.top();
+        heap.pop();
+    }
+    cout << answer << "\n";
+}
+else{
+    heap.push(input);
+}
+```
+priority queue의 자료구조만 알고있다면 간단하게 풀 수 있는 쉬운 문제였다.
+
+<br><br>
+
+### 4. 절대값 힙
+> #### [11286 절대값 힙](https://www.acmicpc.net/problem/11286)
+> #### [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Data_Structure2/11286_%20Absolute%20Heap.cpp)
+
+이 문제는 위에 문제와 비슷한 문제인데 이번에는 절대값이 가장 작은 수를 출력하는 문제이다.
+
+위와 같은 로직으로 구성하였지만 **priority queue의 정렬기준을 다르게 주어** 절대값순으로 queue가 구성되도록 하여 문제를 해결하였다.
+
+```cpp
+// priority queue의 정렬 로직
+struct Absolute
+{
+    bool operator()(int t, int u){
+        if(abs(t) > abs(u)){
+            return true;
+        }
+        else if(abs(t) == abs(u)){
+            return u < 0;
+        }
+        else{
+            return false;
+        }
+    }
+};
+```
