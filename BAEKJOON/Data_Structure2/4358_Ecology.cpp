@@ -5,7 +5,12 @@
 using namespace std;
 
 int main(){
+    ios_base::sync_with_stdio(false);
+
     cout.tie(NULL); cin.tie(NULL);
+
+    cout << fixed;
+    cout.precision(4);
 
     map<string, double> ecoSystem;
 
@@ -27,9 +32,6 @@ int main(){
     }
 
     for(auto wood : ecoSystem){
-        cout << fixed;
-        cout.precision(4);
-
         cout << wood.first << " " << wood.second / wood_count * 100 << "\n";
     }
 }
