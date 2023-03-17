@@ -3,7 +3,7 @@
 
 using namespace std;
 
-string Dial[] = { "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WSYZ" };
+string Dial[] = { "ABC", "DEF", "GHI", "JKL", "MNO", "PQRS", "TUV", "WXYZ" };
 
 int GetNum(char ch);
 
@@ -23,8 +23,10 @@ int main(){
 
 int GetNum(char ch){
     for(int i = 0; i < 8; i++){
-        if(Dial[i].find(ch) != -1){
+        if(Dial[i].find(ch) != string::npos){
             return i + 2; 
         }
     }
+
+    return 0;
 }
