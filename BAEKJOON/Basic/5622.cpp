@@ -13,10 +13,8 @@ int main(){
 
     cin >> input;
 
-    for(char ch : input){
-        int num = GetNum(ch);
-        answer += 2 + (num - 1);
-    }
+    for(char ch : input)
+        answer += GetNum(ch);
 
     cout << answer;
 }
@@ -24,7 +22,7 @@ int main(){
 int GetNum(char ch){
     for(int i = 0; i < 8; i++){
         if(Dial[i].find(ch) != string::npos){
-            return i + 2; 
+            return i + 3; 
         }
     }
 
