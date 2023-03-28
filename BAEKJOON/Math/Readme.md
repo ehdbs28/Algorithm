@@ -369,7 +369,9 @@ for(int i = 0; i < cnt; i++){
 <br>
 
 에레스토테네스를 잘 표현한 GIF를 가져와봤다.
+
 ![117607794-b46aac80-b197-11eb-9106-7b5567fdb357](https://user-images.githubusercontent.com/98889991/192254843-2c8aa21b-f80e-4022-8968-af4131c62c12.gif)
+
 에라토스 테네스의 체는 소수를 구하는 알고리즘중 하나인데
 시간복잡도가 O(n log(logn))으로 굉장히 빠른 듯 하다.
 
