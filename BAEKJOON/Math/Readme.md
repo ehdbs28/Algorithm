@@ -364,6 +364,7 @@ for(int i = 0; i < cnt; i++){
 ### 9. 에라토스테네스의 체
 > #### [2960번 에라토스테네스의 체](https://www.acmicpc.net/problem/2960)
 > [문제 풀이](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Math/2960_Sieve%20of%20Eratosthenes.cpp)
+
 처음 문제를 봤을 때 먼가 이름부터 심상치 않아보이고 굉장한 고난이 예상되었지만.<br>예상보다 많이 쉽게 풀었다?
 
 <br>
