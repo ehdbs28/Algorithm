@@ -1,42 +1,39 @@
 #include<iostream>
+#include<vector>
 
 using namespace std;
 
-int Get_GCD(int a, int b){
-    if(b > a) swap(a, b);
-    if(b == 0) return b;
-    
-    int remain = a % b;
-
-    if(remain == 0){
-        return b;
-    }
-    else{
-        return Get_GCD(b, remain);
-    }
+int getGCD(int a, int b){
+    return b ? getGCD(b, a % b) : a;
 }
 
 int main(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
+    vector<int> nums;
     int lenght;
-    double x;
-    double hap = 0, count = 0;
+    int target;
+    int num;
+
+    double hap = 0;
+    double cnt = 0;
+
     cin >> lenght;
-    double* array = new double[lenght];
 
     for(int i = 0; i < lenght; i++){
-        double n;
-        cin >> n;
-        array[i] = n;
+        cin >> num;
+        nums.push_back(num);
     }
-    cin >> x;
+
+    cin >> target;
+
     for(int i = 0; i < lenght; i++){
-        if(Get_GCD(array[i], x) == 1){
-            hap += array[i];
-            count++;
+        if(getGCD(nums[i], target) == 1){
+            hap += nums[i];
+            ++cnt;
         }
     }
 
-    cout << (int)(hap / count);
+    cout.precision(7);
+    cout << (double)hap / cnt;
 }
