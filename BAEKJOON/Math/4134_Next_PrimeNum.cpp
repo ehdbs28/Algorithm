@@ -1,26 +1,40 @@
 #include<iostream>
-#include<math.h>
+#include<vector>
+#include<cmath>
 
 using namespace std;
 
-bool GetNextPrimeNum(long long num);
+long long GetNextPrimeNum(long long num);
 
 int main(){
     int count;
     cin >> count;
 
     for(int i = 0; i < count; i++){
-        long num = 0;
+        long long num = 0;
         cin >> num;
-        cout << GetNextPrimeNum(num);
+        cout << GetNextPrimeNum(num) << "\n";
     }
 }
 
-bool GetNextPrimeNum(long long num){
+long long GetNextPrimeNum(long long num){
+    if(num < 2)
+        return 2;
 
-    for(long long i = 2; i <= sqrt(num); i++){
-        if(num % i == 0){
-            return false;
+    while(true){
+        bool isPrime = true;
+        
+        for(int i = 2; i <= sqrt(num); i++){
+            if(num % i == 0){
+                isPrime = false;
+                break;
+            }
         }
+
+        if(isPrime)
+            return num;
+
+        ++num;
     }
+    return 0;
 }
