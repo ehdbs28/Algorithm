@@ -6,6 +6,13 @@ C++ 알고리즘 공부일지
 
 <dic align="left">
 
+<br>
+  
+[![Solved.ac Profile](http://mazassumnida.wtf/api/v2/generate_badge?boj=ehdbs41325)](https://solved.ac/ehdbs41325/)
+<img src="http://mazandi.herokuapp.com/api?handle=ehdbs41325&theme=warm"/>
+
+<br>
+
 </div>
 
 ## ✔[BAEKJOON](https://github.com/ehdbs28/Algorithm/blob/main/BAEKJOON/Readme.md) 
