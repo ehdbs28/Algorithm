@@ -4,6 +4,8 @@ Algorithm
 ---
 C++ 알고리즘 공부일지
 
+[알고리즘 풀이 블로그](https://velog.io/@ehdbs28/series/%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%ED%92%80%EC%9D%B4)
+
 <dic align="left">
 
 <br>
