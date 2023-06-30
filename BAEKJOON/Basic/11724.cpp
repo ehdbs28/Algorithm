@@ -4,20 +4,31 @@
 
 using namespace std;
 
-bool checkNum(vector<bool> &check, int &output){
-    for(int i = 1; i < check.size(); i++){
-        if(check[i] == false){
-            output = i;
-            return false;
+void bfs(vector<int> *graph, int start, bool *check){
+    queue<int> q;
+
+    q.push(start);
+    check[start] = true;
+
+    while(q.empty() == false){
+        int node = q.front();
+        q.pop();
+
+        for(int i = 0; i < graph[node].size(); i++){
+            int next = graph[node][i];
+
+            if(check[next] == true)
+                continue;
+
+            check[next] = true;
+            q.push(next);
         }
     }
-
-    return true;
 }
 
 int main(){
-    vector<int> *graph;
-    vector<bool> check;
+    vector<int> graph[1001] = {};
+    bool check[1001] = {};
     
     int n;
     int m;
@@ -25,8 +36,6 @@ int main(){
     int answer = 0;
 
     cin >> n >> m;
-    graph = new vector<int>[n + 1];
-    check = vector<bool>(n + 1, false);
 
     for(int i = 0; i < m; i++){
         int cur;
@@ -36,28 +45,11 @@ int main(){
         graph[next].push_back(cur);
     }
 
-    int output;
-    while(checkNum(check, output) == false){
-        queue<int> q;
-
-        q.push(output);
-        check[output] = true;
-
-        while(q.empty() == false){
-            int node = q.front();
-            q.pop();
-
-            for(int i = 0; i < graph[node].size(); i++){
-                int next = graph[node][i];
-
-                if(check[next] == true)
-                    continue;
-
-                check[next] = true;
-                q.push(next);
-            }
-        }
-
+    for(int i = 1; i <= n; i++){
+        if(check[i] == true)
+            continue;
+        
+        bfs(graph, i, check);
         ++answer;
     }
 
