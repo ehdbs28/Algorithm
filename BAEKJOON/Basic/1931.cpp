@@ -31,10 +31,8 @@ int main(){
     });
 
     for(int i = 0; i < n; i++){
-        if(i > 0){
-            if(v[i].first < cur)
-                continue;
-        }
+        if(v[i].first < cur)
+            continue;
 
         cur = v[i].second;
         ++answer;
