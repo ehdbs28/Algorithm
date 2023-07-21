@@ -49,12 +49,12 @@ cmake_ninja_workdir = /Users/doyun/Algorithm/cmake-build-debug/
 
 build cmake_object_order_depends_target_out: phony || CMakeFiles/out.dir
 
-build CMakeFiles/out.dir/BAEKJOON/Basic/1016.cpp.o: CXX_COMPILER__out_Debug /Users/doyun/Algorithm/BAEKJOON/Basic/1016.cpp || cmake_object_order_depends_target_out
-  DEP_FILE = CMakeFiles/out.dir/BAEKJOON/Basic/1016.cpp.o.d
+build CMakeFiles/out.dir/test.cpp.o: CXX_COMPILER__out_Debug /Users/doyun/Algorithm/test.cpp || cmake_object_order_depends_target_out
+  DEP_FILE = CMakeFiles/out.dir/test.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -fcolor-diagnostics -std=gnu++14
   INCLUDES = -I/Users/doyun/Algorithm/. -I/Users/doyun/Algorithm/BAEKJOON -I/Users/doyun/Algorithm/PROGRAMMERS
   OBJECT_DIR = CMakeFiles/out.dir
-  OBJECT_FILE_DIR = CMakeFiles/out.dir/BAEKJOON/Basic
+  OBJECT_FILE_DIR = CMakeFiles/out.dir
 
 
 # =============================================================================
@@ -64,7 +64,7 @@ build CMakeFiles/out.dir/BAEKJOON/Basic/1016.cpp.o: CXX_COMPILER__out_Debug /Use
 #############################################
 # Link the executable out
 
-build out: CXX_EXECUTABLE_LINKER__out_Debug CMakeFiles/out.dir/BAEKJOON/Basic/1016.cpp.o
+build out: CXX_EXECUTABLE_LINKER__out_Debug CMakeFiles/out.dir/test.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk
   OBJECT_DIR = CMakeFiles/out.dir
   POST_BUILD = :

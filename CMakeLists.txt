@@ -9,4 +9,4 @@ include_directories(.)
 include_directories(BAEKJOON)
 include_directories(PROGRAMMERS)
 
-add_executable(out BAEKJOON/Basic/1016.cpp)
+add_executable(out test.cpp)
