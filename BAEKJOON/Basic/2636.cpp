@@ -8,7 +8,7 @@ int destX[4] = { -1, 1, 0, 0 };
 int destY[4] = { 0, 0, -1, 1 };
 
 int board[101][101] = {};
-int check[101][101] = {};
+bool check[101][101] = {};
 
 int n;
 int m;
@@ -34,14 +34,16 @@ void BFS(){
                 continue;
 
             if(board[next.second][next.first] == 1){
-                check[next.second][next.first] = 2;
+                board[next.second][next.first] = 0;
+                check[next.second][next.first] = true;
+                --target;
                 continue;
             }
 
-            if(check[next.second][next.first] == 1)
+            if(check[next.second][next.first])
                 continue;
 
-            check[next.second][next.first] = 1;
+            check[next.second][next.first] = true;
             q.push(next);
         }
     }
@@ -61,19 +63,10 @@ int main(){
     }
 
     while(target != 0){
-        memset(check, 0, sizeof(check));
+        memset(check, false, sizeof(check));
 
-        BFS();
         lastTarget = target;
-
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                if(check[i][j] == 2){
-                    --target;
-                    board[i][j] = 0;
-                }
-            }
-        }
+        BFS();
 
         ++answer;
     }
