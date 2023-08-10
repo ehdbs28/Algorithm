@@ -18,7 +18,6 @@ void Search1(Node* node){
         return;
 
     ans.push_back(node->ch);
-
     Search1(node->left);
     Search1(node->right);
 }
