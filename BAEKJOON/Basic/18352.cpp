@@ -1,64 +1,63 @@
-#include<iostream>
-#include<queue>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <queue>
+#include <vector>
+#include <climits>
 
 using namespace std;
 
-vector<int> graph[300001] = {};
-vector<int> answer;
-bool check[300001] = {};
-
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
 
-    int v;
-    int e;
+    int n;
+    int m;
     int k;
+    int s;
 
-    int start;
+    int cnt = 0;
 
-    cin >> v >> e >> k >> start;
+    vector<int> graph[300001] = {};
+    vector<int> dist;
 
-    for(int i = 0; i < e; i++){
-        int from;
-        int to;
+    cin >> n >> m >> k >> s;
 
+    dist.resize(n + 1, INT_MAX);
+
+    for(int i = 0; i < m; i++){
+        int from, to;
         cin >> from >> to;
-
         graph[from].push_back(to);
     }
 
-    queue<pair<int, int>> q;
-    q.emplace(start, 0);
-    check[start] = true;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> pq;
 
-    while(!q.empty()){
-        pair<int, int> cur = q.front();
-        q.pop();
+    dist[s] = 0;
+    pq.emplace(0, s);
 
-        if(cur.second == k){
-            answer.push_back(cur.first);
-        }
+    while(!pq.empty()){
+        pair<int, int> cur = pq.top();
+        pq.pop();
 
-        for(int i = 0; i < graph[cur.first].size(); i++){
-            int next = graph[cur.first][i];
+        for(int i = 0; i < graph[cur.second].size(); i++){
+            int next = graph[cur.second][i];
+            int nd = cur.first + 1;
 
-            if(check[next])
-                continue;
-
-            check[next] = true;
-            q.emplace(next, cur.second + 1);
+            if(nd < dist[next]){
+                dist[next] = nd;
+                pq.emplace(nd, next);
+            }
         }
     }
 
-    if(answer.empty()){
+    for(int i = 1; i <= n; i++){
+        if(dist[i] == k){
+            ++cnt;
+            cout << i << "\n";
+        }
+    }
+
+    if(cnt == 0){
         cout << -1;
-    }
-    else{
-        sort(answer.begin(), answer.end(), less<>());
-
-        for(int i = 0; i < answer.size(); i++){
-            cout << answer[i] << "\n";
-        }
     }
 }
