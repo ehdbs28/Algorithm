@@ -3,64 +3,79 @@
 
 using namespace std;
 
-struct Node{
+struct node{
     int n;
-    Node* left;
-    Node* right;
+    node* left;
+    node* right;
 };
 
-vector<int> nums;
-Node* tree;
+class binary_tree{
+public:
+    binary_tree(){
+        m_root = nullptr;
+    }
 
-void Search(Node* node){
-    if(node == nullptr)
-        return;
+    binary_tree(int n){
+        m_root = new node{n, nullptr, nullptr};
+    }
 
-    Search(node->left);
-    Search(node->right);
-    cout << node->n << "\n";
-}
+public:
+    void addNode(int n, node* root){
+        if(root->n > n){
+            if(root->left == nullptr){
+                root->left = new node{n, nullptr, nullptr};
+                return;
+            }
+            else{
+                addNode(n, root->left);
+            }
+        }
+        else{
+            if(root->right == nullptr){
+                root->right = new node{n, nullptr, nullptr};
+                return;
+            }
+            else{
+                addNode(n, root->right);
+            }
+        }
+    }
+
+    void search(node* node){
+        if(node == nullptr)
+            return;
+
+        search(node->left);
+        search(node->right);
+        cout << node->n << "\n";
+    }
+
+public:
+    node* getRoot() { return m_root; }
+
+private:
+    node* m_root;
+
+};
 
 int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    binary_tree tree;
+
     while(true){
         int n;
         cin >> n;
         if(cin.eof())
             break;
-        nums.push_back(n);
+
+        if(tree.getRoot() == nullptr)
+            tree = binary_tree(n);
+        else
+            tree.addNode(n, tree.getRoot());
     }
 
-    for(int i = 0; i < nums.size(); i++){
-        int n = nums[i];
-
-        if(tree == nullptr){
-            tree = new Node({ n, nullptr, nullptr });
-            continue;
-        }
-
-        Node* root = tree;
-
-        while(true){
-            if(root->n > n){
-                if(root->left == nullptr){
-                    root->left = new Node({ n, nullptr, nullptr });
-                    break;
-                }
-                else{
-                    root = root->left;
-                }
-            }
-            else{
-                if(root->right == nullptr){
-                    root->right = new Node({ n, nullptr, nullptr });
-                    break;
-                }
-                else{
-                    root = root->right;
-                }
-            }
-        }
-    }
-
-    Search(tree);
+    tree.search(tree.getRoot());
 }
