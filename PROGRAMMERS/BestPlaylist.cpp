@@ -29,7 +29,6 @@ struct playlist{
     }
 };
 
-
 vector<int> solution(vector<string> genres, vector<int> plays) {
     map<string, playlist> m;
     vector<int> answer;
@@ -43,7 +42,7 @@ vector<int> solution(vector<string> genres, vector<int> plays) {
     sort(v.begin(), v.end(), [](pair<string, playlist> a, pair<string, playlist> b){
         return a.second(a.second, b.second);
     });
-    
+
     for(auto& item : v){
         for(int i = 0; !item.second.songs.empty() && i < 2; i++){
             answer.push_back(item.second.songs.top().idx);
