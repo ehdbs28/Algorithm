@@ -1,29 +1,30 @@
 #include<iostream>
-#include<unordered_map>
+#include<algorithm>
 
 using namespace std;
 
-int main(){
-    ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
+int arr[500000] = {};
 
-    unordered_map<int, int> numbers;
+int main() {
+	ios_base::sync_with_stdio(false);
+	cin.tie(nullptr);
+	cout.tie(nullptr);
 
-    int n, m, input;
+	int n;
+	int m;
 
-    cin >> n;
+	cin >> n;
 
-    for(int i = 0; i < n; i++){
-        cin >> input;
-        
-        numbers.insert({input, 0});
-        ++numbers[input];
-    }
+	for (int i = 0; i < n; i++) {
+		cin >> arr[i];
+	}
+	sort(arr, arr + n);
 
-    cin >> m;
+	cin >> m;
 
-    for(int i = 0; i < m; i++){
-        cin >> input;
-
-        cout << numbers[input] << " ";
-    }
+	for (int i = 0; i < m; i++) {
+		int a;
+		cin >> a;
+		cout << upper_bound(arr, arr + n, a) - lower_bound(arr, arr + n, a) << " ";
+	}
 }
