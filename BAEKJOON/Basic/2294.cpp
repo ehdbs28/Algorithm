@@ -1,48 +1,26 @@
 #include<iostream>
-#include<set>
-#include<queue>
-#include<climits>
+#include<algorithm>
+
+#define MAX 99999999
 
 using namespace std;
 
 int main(){
     int n, k;
-    int ans = INT_MAX;
-
     cin >> n >> k;
 
-    set<int> coins;
+    int dp[10001] = {};
+    fill(dp, dp + 10001, MAX);
+    dp[0] = 0;
+
     for(int i = 0; i < n; i++){
-        int c = 0;
-        cin >> c;
-        coins.insert(c);
-    }
+        int coin;
+        cin >> coin;
 
-    queue<pair<int, int>> q;
-    bool visited[10001] = {};
-    q.emplace(0, 0);
-    visited[0] = true;
-
-    while(!q.empty()){
-        int cur = q.front().first;
-        int cnt = q.front().second;
-        q.pop();
-
-        if(cur == k){
-            ans = min(ans, cnt);
-        }
-
-        for(int c : coins){
-            int dest = cur + c;
-
-            if(dest > k || visited[dest]){
-                continue;
-            }
-
-            q.emplace(dest, cnt + 1);
-            visited[dest] = true;
+        for(int j = coin; j <= k; j++){
+            dp[j] = min(dp[j], dp[j - coin] + 1);
         }
     }
 
-    cout << (ans == INT_MAX ? -1 : ans);
+    cout << (dp[k] == MAX ? -1 : dp[k]);
 }
