@@ -5,7 +5,7 @@
 using namespace std;
 
 int main(){
-    ios_base::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+    ios_base::sync_with_stdio(false); cin.tie(nullptr); cout.tie(nullptr);
 
     int n;
     int cur = 0;
@@ -20,7 +20,7 @@ int main(){
         int end;
 
         cin >> start >> end;
-        v.push_back({ start, end });
+        v.emplace_back(start, end);
     }
 
     sort(v.begin(), v.end(), [](pair<int, int> a, pair<int, int> b){
