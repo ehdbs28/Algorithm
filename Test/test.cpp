@@ -1,41 +1,41 @@
-#include <iostream>
+#include<iostream>
+#include<vector>
 
-int main()
-{
-    int length, target;
-    std::cin >> length >> target;
+using namespace std;
 
-    int sum = 0, front = 0, shortest = length;
-    int* numbers = new int[length];
-    std::cin >> numbers[0];
-    sum = numbers[0];
+vector<int> graph[32001] = {};
+bool check[32001] = {};
 
-    for (int i = 1; i < length; ++i)
-    {
-        std::cin >> numbers[i];
-        sum += numbers[i];
-        if (sum >= target)
-        {
-            while (front < i)
-            {
-                int frontNumber = numbers[front];
-                if (sum - frontNumber < target)
-                    break;
+void DFS(int n){
+    check[n] = true;
 
-                front++;
-                sum -= frontNumber;
-            }
-
-            int currentLength = i - front + 1;
-            if (currentLength < shortest)
-                shortest = currentLength;
-        }
+    for(int i = 0; i < graph[n].size(); i++){
+        if(!check[graph[n][i]])
+            DFS(graph[n][i]);
     }
 
-    if (sum < target)
-        std::cout << 0;
-    else
-        std::cout << shortest;
+    cout << n << " ";
+}
 
-    return 0;
+int main(){
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
+    cout.tie(nullptr);
+
+    int n;
+    int m;
+
+    cin >> n >> m;
+
+    for(int i = 0; i < m; i++){
+        int from;
+        int to;
+        cin >> from >> to;
+        graph[to].push_back(from);
+    }
+
+    for(int i = 1; i <= n; i++){
+        if(!check[i])
+            DFS(i);
+    }
 }
