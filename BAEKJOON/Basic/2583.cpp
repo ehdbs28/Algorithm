@@ -7,7 +7,7 @@ using namespace std;
 
 #define X first
 #define Y second
-#define MAX 100 + 1
+#define MAX 101
 
 int N, M, K;
 
