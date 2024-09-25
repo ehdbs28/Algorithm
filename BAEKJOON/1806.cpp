@@ -3,10 +3,10 @@
 using namespace std;
 
 int n;
-long long s;
+int s;
 
 int arr[100001] = {};
-long long prefix_sum[100001] = {};
+int prefix_sum[100001] = {};
 
 int ans = 100000;
 
